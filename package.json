@@ -1,0 +1,17 @@
+{
+  "name": "react-webpack",
+  "version": "1.0.0",
+  "description": "A Basic React app set-up with webpack",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "waracci",
+  "license": "ISC"
+}
