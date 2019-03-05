@@ -1,40 +1,26 @@
 import React, { Component } from "react";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import HomeComponent from './Home'
 import '../public/css/style.css'
+import LoginComponent from "./Login";
+import Navbar from "./common/Navbar";
+import Footer from "./common/Footer";
+import RegisterComponent from "./register";
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <div class="row row-wide">
-        <div class="banner">
-            <a href="index.html" class="logo">store-manager</a>
-            <nav>
-                <ul class="nav">
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="login.html" class="button-green">sign in</a></li>
-                    <li><a href="register.html" class="button-blue">sign up</a></li>
-                </ul>
-            </nav>
+        <Router>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact={true} path="/" component={HomeComponent} />
+            <Route exact path="/login" component={LoginComponent} />
+            <Route exact path="/register" component={ RegisterComponent } />
+          </Switch>
+          < Footer/>
         </div>
-        <div class="content">
-            <div class="center">
-                <h1>Store Manager</h1>
-                <div class="pad">
-                    <p>Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.</p>
-                </div>
-                <hr/>
-                <a class="button button-green" href="login.html">sign in</a>
-                <a class="button button-blue" href="register.html">sign up</a>
-                <hr />
-                <img src="../assets/images/world.png" alt="store manager app" />
-            </div>
-        </div>
-        <div class="footer">
-            <p>Store Manager</p>
-            <p>Copyright 2018</p>
-        </div>
-    </div>
-      </div>
+      </Router>
     );
   }
 }
